@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Areas/Users/Views/Shared/_LayoutUsers.cshtml";
+}
+@using PerpetuumSoft.Knockout
+@using NextProjectMVC.Models.ViewModels
+@model TestViewModel
+@{
+    var ko = Html.CreateKnockoutContext();
+}
+<h2>
+    Test</h2>
+<div>
+    @Html.LabelFor(m => m.text)
+    @ko.Html.TextBox(m => m.text)
+</div>
+@ko.Apply(Model)

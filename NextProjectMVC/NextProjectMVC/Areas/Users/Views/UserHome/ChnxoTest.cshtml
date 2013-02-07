@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "ChnxoTest";
+    Layout = "~/Areas/Users/Views/Shared/_LayoutUsers.cshtml";
+}
+@using PerpetuumSoft.Knockout
+@using NextProjectMVC.Models.ViewModels
+@model ChnxoViewModel
+@{
+    var ko = Html.CreateKnockoutContext();
+}
+<h2>
+    ChnxoTest</h2>
+<div class="form-horizontal">
+    <div class="control-group">
+        @Html.LabelFor(m => m.iLvl, new { @class = "control-label" })
+        <div class="controls">
+            @ko.Html.TextBox(m => m.iLvl, new { @class = "txt input-medium" })
+        </div>
+    </div>
+    <div class="control-gruop">
+        @Html.LabelFor(m => m.Specialization, new { @class = "control-label" })
+        <div class="controls">
+            @ko.Html.TextBox(m => m.Specialization, new { @class = "txt input-medium" })
+        </div>
+    </div>
+    <div class="control-gruop">
+        <div class="controls">
+            @ko.Html.Button("test", "ChnxoSave", "UserHome", null, new { @class = "btn-nextproject" })
+        </div>
+    </div>
+    <h2 class="centered">
+        <p @ko.Bind.Text(m => m.Guild)>
+        </p>
+    </h2>
+</div>
+@ko.Apply(Model)
